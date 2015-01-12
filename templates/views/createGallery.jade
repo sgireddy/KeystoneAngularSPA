@@ -1,0 +1,64 @@
+﻿extends ../layouts/default
+
+block content
+
+	.section
+		.container
+			form(method='post', enctype='multipart/form-data', autocomplete='off', novalidate).form-horizontal.create-form.profile-form
+				input(type='hidden', name='action', value='create-gallery')
+				input(type='hidden', name='images' id='imgArray')
+				
+				.row: .col-sm-8.col-sm-offset-2
+					
+					//- Title
+					.form-group
+						h1 Create a Gallery
+						input(type='text', id='gallery-title', name='name', placeholder='Gallery title').input.input-xl.input-faded
+					
+
+					.form-group
+						label(for='allImages') Images:
+						div.form_controls
+							div.upload_button_holder
+								a(href='#', class='upload_button') Upload
+								form(enctype="multipart/form-data")!=cloudinary.uploader.image_upload_tag('allImages', { callback: cloudinary_cors, html: { multiple: 5 } }) 
+								//- ('image')
+								//- cloudinary.uploader.image_upload_tag('image_id', { callback: cloudinary_cors })
+							div
+								span.status
+								input(type='button', onclick='appendImages()', value='Done')
+
+					.form-group
+						div.form_line
+							div.form_controls
+								div.preview
+						//-div.form_line
+						//-	div.form_controls
+						//-		input(name='type', type='hidden', value='direct')
+						//-		input(name='commit', type='submit', value='Submit Photo') 
+
+					div(id='info')
+					
+					//- Submit
+					.form-group
+						button(type='submit', data-loading-text="Changing...").btn.btn-lg.btn-primary.btn-block Create Gallery
+						
+block js
+	script(src='/js/lib/bootstrap/button.js')
+	script(src='/js/lib/tinymce/tinymce.min.js')
+	script(src='/js/lib/tinymce/jquery.tinymce.min.js')
+	script(src='/js/script.js')
+	script.
+		jQuery(function($) {
+			$( "#gallery-title" ).focus();
+			tinymce.init({
+				selector: 'textarea.wysiwyg',
+				menubar: false,
+				height: 400,
+				plugins: [ 'code', 'link' ],
+				toolbar: 'bold italic | alignleft aligncenter alignright | bullist numlist | outdent indent | link | code',
+				skin: 'keystone'
+			});
+		});
+
+		

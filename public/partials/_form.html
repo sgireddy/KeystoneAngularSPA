@@ -1,0 +1,83 @@
+<div class="content">
+    <div class="form-group">
+        <label for="title" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="movie.title" class="form-control" id="title" placeholder="Movie Title Here" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="year" class="col-sm-2 control-label">Release Year</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="movie.releaseYear" class="form-control" id="year" placeholder="When was the movie released?" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="director" class="col-sm-2 control-label">Director</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="movie.director" class="form-control" id="director" placeholder="Who directed the movie?" />
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="plot" class="col-sm-2 control-label">Movie Genre</label>
+        <div class="col-sm-10">
+            <input type="text" ng-model="movie.genre" class="form-control" id="plot" placeholder="Movie genre here" />
+        </div>
+    </div>    
+
+    <div ng-controller="photoUploadCtrl">
+        <!--ng-view class="view-frame">-->
+
+        <div id="direct_upload"
+             ng-file-drop="onFileSelect($files)"
+             ng-file-drag-over-class="dragOverClass($event)">
+            <h1>New Photo</h1>
+            <h2>Direct upload from the browser with Angular File Upload</h2>
+            <p>You can also drag and drop an image file into the dashed area.</p>
+            <form>
+                <!--<div class="form_line">
+                    <label path="title">Title:</label>
+                    <div class="form_controls">
+                        <input type="text" class="form-control" placeholder="Title" ng-model="title" />
+                    </div>
+                </div>-->
+                <div class="form_line">
+                    <label>Image:</label>
+                    <div class="form_controls">
+                        <div class="upload_button_holder">
+                            <div href="#" class="upload_button" ng-file-select ng-multiple="true" title="aaaa" resetonclick="true" ng-model="files">Upload</div>
+                        </div>
+
+                    </div>
+                </div>
+            </form>
+            <h2>Status</h2>
+            <div class="file" ng-repeat="file in files">
+                <h3>{{file.name}}</h3>
+                <div class="status">{{file.status}}</div>
+                <div class="progress-bar">
+                    <div class="progress" style="width: {{file.progress}}%" ng-init="progress=0"></div>
+                </div>
+                <div class="form_line">
+                    <div class="form_controls">
+                        <div class="preview"></div>
+                    </div>
+                </div>
+                <div class="info">
+                    <table>
+                        <tr ng-repeat="(key, value) in file.result">
+                            <td> {{key}} </td>
+                            <td> {{ value }} </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <input type="submit" class="btn btn-primary" value="Save" />
+        </div>
+    </div>
+</div>  

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6ab4e1e8-2681-4337-9ba5-2ba3d463ad42}</ProjectGuid>
+    <ProjectHome />
+    <ProjectView>ShowAllFiles</ProjectView>
+    <StartupFile>keystone.js</StartupFile>
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <ItemGroup>
+    <Content Include="package.json" />
+    <Compile Include="gulpfile.js" />
+    <Compile Include="keystone.js" />
+    <Compile Include="models\Enquiry.js" />
+    <Compile Include="models\Gallery.js" />
+    <Compile Include="models\Movie.js" />
+    <Compile Include="models\Post.js" />
+    <Compile Include="models\PostCategory.js" />
+    <Compile Include="models\User.js" />
+    <Content Include="public\index.html" />
+    <Content Include="public\favicon.ico" />
+    <Compile Include="public\jquery.cloudinary.js" />
+    <Compile Include="public\jquery.fileupload.js" />
+    <Compile Include="public\jquery.iframe-transport.js" />
+    <Compile Include="public\jquery.ui.widget.js" />
+    <Compile Include="routes\emails.js" />
+    <Compile Include="routes\index.js" />
+    <Compile Include="routes\middleware.js" />
+    <Compile Include="updates\0.0.1-admins.js" />
+    <Content Include="public\css\animations.css" />
+    <Content Include="public\css\app.css" />
+    <Content Include="public\css\bootstrap.min.css" />
+    <Content Include="public\css\photo_album.css" />
+    <Content Include="public\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="public\images\logo-email.gif" />
+    <Content Include="public\images\logo.svg" />
+    <Compile Include="public\js\app.js" />
+    <Compile Include="public\js\script.js" />
+    <Compile Include="public\js\lib\angular-ui-router.min.js" />
+    <Content Include="public\partials\movie-add.html" />
+    <Content Include="public\partials\movie-edit.html" />
+    <Content Include="public\partials\movie-view.html" />
+    <Content Include="public\partials\movies.html" />
+    <Content Include="public\partials\photo-list.html" />
+    <Content Include="public\partials\photo-upload-jquery.html" />
+    <Content Include="public\partials\photo-upload.html" />
+    <Content Include="public\partials\_form.html" />
+    <Content Include="public\styles\site.min.css" />
+    <Content Include="public\stylesheets\style.css" />
+    <Compile Include="public\js\cloudinary\animations.js" />
+    <Compile Include="public\js\cloudinary\config.js" />
+    <Compile Include="public\js\cloudinary\controllers.js" />
+    <Compile Include="public\js\cloudinary\services.js" />
+    <Compile Include="public\js\movies\controllers.js" />
+    <Compile Include="public\js\movies\directives.js" />
+    <Compile Include="public\js\movies\filters.js" />
+    <Compile Include="public\js\movies\services.js" />
+    <Content Include="public\js\lib\angular\angular-csp.css" />
+    <Content Include="public\js\lib\angular\.bower.json" />
+    <Content Include="public\js\lib\angular\bower.json" />
+    <Content Include="public\js\lib\angular\package.json" />
+    <Content Include="public\js\lib\angular\README.md" />
+    <Compile Include="public\js\lib\angular\angular.js" />
+    <Compile Include="public\js\lib\angular\angular.min.js" />
+    <Content Include="public\js\lib\angular-animate\.bower.json" />
+    <Content Include="public\js\lib\angular-animate\bower.json" />
+    <Content Include="public\js\lib\angular-animate\package.json" />
+    <Content Include="public\js\lib\angular-animate\README.md" />
+    <Compile Include="public\js\lib\angular-animate\angular-animate.js" />
+    <Compile Include="public\js\lib\angular-animate\angular-animate.min.js" />
+    <Content Include="public\js\lib\angular-resource\.bower.json" />
+    <Content Include="public\js\lib\angular-resource\bower.json" />
+    <Content Include="public\js\lib\angular-resource\package.json" />
+    <Content Include="public\js\lib\angular-resource\README.md" />
+    <Compile Include="public\js\lib\angular-resource\angular-resource.js" />
+    <Compile Include="public\js\lib\angular-resource\angular-resource.min.js" />
+    <Content Include="public\js\lib\angular-route\.bower.json" />
+    <Content Include="public\js\lib\angular-route\bower.json" />
+    <Content Include="public\js\lib\angular-route\package.json" />
+    <Content Include="public\js\lib\angular-route\README.md" />
+    <Compile Include="public\js\lib\angular-route\angular-route.js" />
+    <Compile Include="public\js\lib\angular-route\angular-route.min.js" />
+    <Content Include="public\js\lib\blueimp-canvas-to-blob\.bower.json" />
+    <Content Include="public\js\lib\blueimp-canvas-to-blob\bower.json" />
+    <Content Include="public\js\lib\blueimp-file-upload\.bower.json" />
+    <Content Include="public\js\lib\blueimp-file-upload\bower.json" />
+    <Content Include="public\js\lib\blueimp-load-image\.bower.json" />
+    <Content Include="public\js\lib\blueimp-load-image\bower.json" />
+    <Content Include="public\js\lib\blueimp-tmpl\.bower.json" />
+    <Content Include="public\js\lib\blueimp-tmpl\bower.json" />
+    <Compile Include="public\js\lib\bootstrap\affix.js" />
+    <Compile Include="public\js\lib\bootstrap\alert.js" />
+    <Compile Include="public\js\lib\bootstrap\bootstrap-3.2.0.js" />
+    <Compile Include="public\js\lib\bootstrap\bootstrap-3.2.0.min.js" />
+    <Compile Include="public\js\lib\bootstrap\button.js" />
+    <Compile Include="public\js\lib\bootstrap\carousel.js" />
+    <Compile Include="public\js\lib\bootstrap\collapse.js" />
+    <Compile Include="public\js\lib\bootstrap\dropdown.js" />
+    <Compile Include="public\js\lib\bootstrap\modal.js" />
+    <Compile Include="public\js\lib\bootstrap\popover.js" />
+    <Compile Include="public\js\lib\bootstrap\scrollspy.js" />
+    <Compile Include="public\js\lib\bootstrap\tab.js" />
+    <Compile Include="public\js\lib\bootstrap\tooltip.js" />
+    <Compile Include="public\js\lib\bootstrap\transition.js" />
+    <Content Include="public\js\lib\cloudinary_js\.bower.json" />
+    <Content Include="public\js\lib\cloudinary_js\bower.json" />
+    <Content Include="public\js\lib\cloudinary_ng\.bower.json" />
+    <Content Include="public\js\lib\cloudinary_ng\bower.json" />
+    <Content Include="public\js\lib\cloudinary_ng\README.md" />
+    <Content Include="public\js\lib\jquery\MIT-LICENSE.txt" />
+    <Content Include="public\js\lib\jquery\.bower.json" />
+    <Content Include="public\js\lib\jquery\bower.json" />
+    <Compile Include="public\js\lib\jquery\jquery-1.11.1.js" />
+    <Compile Include="public\js\lib\jquery\jquery-1.11.1.min.js" />
+    <Compile Include="public\js\lib\jquery\jquery-2.1.1.js" />
+    <Compile Include="public\js\lib\jquery\jquery-2.1.1.min.js" />
+    <Content Include="public\js\lib\ng-file-upload\.bower.json" />
+    <Content Include="public\js\lib\ng-file-upload\bower.json" />
+    <Content Include="public\js\lib\ng-file-upload\README.md" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-all.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-all.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-html5-shim.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-html5-shim.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-shim.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload-shim.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload.js" />
+    <Compile Include="public\js\lib\ng-file-upload\angular-file-upload.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload\FileAPI.min.js" />
+    <Content Include="public\js\lib\ng-file-upload-shim\.bower.json" />
+    <Content Include="public\js\lib\ng-file-upload-shim\bower.json" />
+    <Content Include="public\js\lib\ng-file-upload-shim\README.md" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-all.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-all.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-html5-shim.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-html5-shim.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-shim.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload-shim.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\angular-file-upload.min.js" />
+    <Compile Include="public\js\lib\ng-file-upload-shim\FileAPI.min.js" />
+    <Content Include="public\js\lib\tinymce\license.txt" />
+    <Compile Include="public\js\lib\tinymce\jquery.tinymce.min.js" />
+    <Compile Include="public\js\lib\tinymce\tinymce.min.js" />
+    <Compile Include="public\js\lib\blueimp-canvas-to-blob\js\canvas-to-blob.js" />
+    <Compile Include="public\js\lib\blueimp-canvas-to-blob\js\canvas-to-blob.min.js" />
+    <Content Include="public\js\lib\blueimp-file-upload\css\jquery.fileupload-noscript.css" />
+    <Content Include="public\js\lib\blueimp-file-upload\css\jquery.fileupload-ui-noscript.css" />
+    <Content Include="public\js\lib\blueimp-file-upload\css\jquery.fileupload-ui.css" />
+    <Content Include="public\js\lib\blueimp-file-upload\css\jquery.fileupload.css" />
+    <Content Include="public\js\lib\blueimp-file-upload\img\loading.gif" />
+    <Content Include="public\js\lib\blueimp-file-upload\img\progressbar.gif" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-angular.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-audio.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-image.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-jquery-ui.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-process.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-ui.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-validate.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload-video.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.fileupload.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\jquery.iframe-transport.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\cors\jquery.postmessage-transport.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\cors\jquery.xdr-transport.js" />
+    <Compile Include="public\js\lib\blueimp-file-upload\js\vendor\jquery.ui.widget.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image-exif-map.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image-exif.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image-ios.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image-meta.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image-orientation.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image.all.min.js" />
+    <Compile Include="public\js\lib\blueimp-load-image\js\load-image.js" />
+    <Compile Include="public\js\lib\blueimp-tmpl\js\compile.js" />
+    <Compile Include="public\js\lib\blueimp-tmpl\js\runtime.js" />
+    <Compile Include="public\js\lib\blueimp-tmpl\js\tmpl.js" />
+    <Compile Include="public\js\lib\blueimp-tmpl\js\tmpl.min.js" />
+    <Content Include="public\js\lib\cloudinary_js\html\cloudinary_cors.html" />
+    <Compile Include="public\js\lib\cloudinary_js\js\canvas-to-blob.min.js" />
+    <Compile Include="public\js\lib\cloudinary_js\js\jquery.cloudinary.js" />
+    <Compile Include="public\js\lib\cloudinary_js\js\load-image.min.js" />
+    <Content Include="public\js\lib\cloudinary_js\samples\bootstrap.html" />
+    <Compile Include="public\js\lib\cloudinary_ng\js\angular.cloudinary.js" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\bower.json" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\package.json" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\README.md" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\index.html" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\css\animations.css" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\css\app.css" />
+    <Compile Include="public\js\lib\cloudinary_ng\samples\photo_album\app\js\animations.js" />
+    <Compile Include="public\js\lib\cloudinary_ng\samples\photo_album\app\js\app.js" />
+    <Compile Include="public\js\lib\cloudinary_ng\samples\photo_album\app\js\controllers.js" />
+    <Compile Include="public\js\lib\cloudinary_ng\samples\photo_album\app\js\services.js" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\partials\photo-list.html" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\partials\photo-upload-jquery.html" />
+    <Content Include="public\js\lib\cloudinary_ng\samples\photo_album\app\partials\photo-upload.html" />
+    <Compile Include="public\js\lib\jquery\dist\jquery.js" />
+    <Compile Include="public\js\lib\jquery\dist\jquery.min.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes.js" />
+    <Compile Include="public\js\lib\jquery\src\callbacks.js" />
+    <Compile Include="public\js\lib\jquery\src\core.js" />
+    <Compile Include="public\js\lib\jquery\src\css.js" />
+    <Compile Include="public\js\lib\jquery\src\data.js" />
+    <Compile Include="public\js\lib\jquery\src\deferred.js" />
+    <Compile Include="public\js\lib\jquery\src\deprecated.js" />
+    <Compile Include="public\js\lib\jquery\src\dimensions.js" />
+    <Compile Include="public\js\lib\jquery\src\effects.js" />
+    <Compile Include="public\js\lib\jquery\src\event.js" />
+    <Compile Include="public\js\lib\jquery\src\intro.js" />
+    <Compile Include="public\js\lib\jquery\src\jquery.js" />
+    <Compile Include="public\js\lib\jquery\src\manipulation.js" />
+    <Compile Include="public\js\lib\jquery\src\offset.js" />
+    <Compile Include="public\js\lib\jquery\src\outro.js" />
+    <Compile Include="public\js\lib\jquery\src\queue.js" />
+    <Compile Include="public\js\lib\jquery\src\selector-native.js" />
+    <Compile Include="public\js\lib\jquery\src\selector-sizzle.js" />
+    <Compile Include="public\js\lib\jquery\src\selector.js" />
+    <Compile Include="public\js\lib\jquery\src\serialize.js" />
+    <Compile Include="public\js\lib\jquery\src\traversing.js" />
+    <Compile Include="public\js\lib\jquery\src\wrap.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\jsonp.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\load.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\parseJSON.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\parseXML.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\script.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\xhr.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes\attr.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes\classes.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes\prop.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes\support.js" />
+    <Compile Include="public\js\lib\jquery\src\attributes\val.js" />
+    <Compile Include="public\js\lib\jquery\src\core\access.js" />
+    <Compile Include="public\js\lib\jquery\src\core\init.js" />
+    <Compile Include="public\js\lib\jquery\src\core\parseHTML.js" />
+    <Compile Include="public\js\lib\jquery\src\core\ready.js" />
+    <Compile Include="public\js\lib\jquery\src\css\addGetHookIf.js" />
+    <Compile Include="public\js\lib\jquery\src\css\curCSS.js" />
+    <Compile Include="public\js\lib\jquery\src\css\defaultDisplay.js" />
+    <Compile Include="public\js\lib\jquery\src\css\hiddenVisibleSelectors.js" />
+    <Compile Include="public\js\lib\jquery\src\css\support.js" />
+    <Compile Include="public\js\lib\jquery\src\css\swap.js" />
+    <Compile Include="public\js\lib\jquery\src\data\accepts.js" />
+    <Compile Include="public\js\lib\jquery\src\data\Data.js" />
+    <Compile Include="public\js\lib\jquery\src\effects\animatedSelector.js" />
+    <Compile Include="public\js\lib\jquery\src\effects\Tween.js" />
+    <Compile Include="public\js\lib\jquery\src\event\ajax.js" />
+    <Compile Include="public\js\lib\jquery\src\event\alias.js" />
+    <Compile Include="public\js\lib\jquery\src\event\support.js" />
+    <Compile Include="public\js\lib\jquery\src\exports\amd.js" />
+    <Compile Include="public\js\lib\jquery\src\exports\global.js" />
+    <Compile Include="public\js\lib\jquery\src\manipulation\support.js" />
+    <Compile Include="public\js\lib\jquery\src\manipulation\_evalUrl.js" />
+    <Compile Include="public\js\lib\jquery\src\queue\delay.js" />
+    <Compile Include="public\js\lib\jquery\src\traversing\findFilter.js" />
+    <Compile Include="public\js\lib\jquery\src\var\arr.js" />
+    <Compile Include="public\js\lib\jquery\src\var\class2type.js" />
+    <Compile Include="public\js\lib\jquery\src\var\concat.js" />
+    <Compile Include="public\js\lib\jquery\src\var\hasOwn.js" />
+    <Compile Include="public\js\lib\jquery\src\var\indexOf.js" />
+    <Compile Include="public\js\lib\jquery\src\var\pnum.js" />
+    <Compile Include="public\js\lib\jquery\src\var\push.js" />
+    <Compile Include="public\js\lib\jquery\src\var\rnotwhite.js" />
+    <Compile Include="public\js\lib\jquery\src\var\slice.js" />
+    <Compile Include="public\js\lib\jquery\src\var\strundefined.js" />
+    <Compile Include="public\js\lib\jquery\src\var\support.js" />
+    <Compile Include="public\js\lib\jquery\src\var\toString.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\var\nonce.js" />
+    <Compile Include="public\js\lib\jquery\src\ajax\var\rquery.js" />
+    <Compile Include="public\js\lib\jquery\src\core\var\rsingleTag.js" />
+    <Compile Include="public\js\lib\jquery\src\css\var\cssExpand.js" />
+    <Compile Include="public\js\lib\jquery\src\css\var\getStyles.js" />
+    <Compile Include="public\js\lib\jquery\src\css\var\isHidden.js" />
+    <Compile Include="public\js\lib\jquery\src\css\var\rmargin.js" />
+    <Compile Include="public\js\lib\jquery\src\css\var\rnumnonpx.js" />
+    <Compile Include="public\js\lib\jquery\src\data\var\data_priv.js" />
+    <Compile Include="public\js\lib\jquery\src\data\var\data_user.js" />
+    <Compile Include="public\js\lib\jquery\src\manipulation\var\rcheckableType.js" />
+    <Compile Include="public\js\lib\jquery\src\sizzle\dist\sizzle.js" />
+    <Compile Include="public\js\lib\jquery\src\sizzle\dist\sizzle.min.js" />
+    <Compile Include="public\js\lib\jquery\src\traversing\var\rneedsContext.js" />
+    <Content Include="public\js\lib\tinymce\langs\readme.md" />
+    <Compile Include="public\js\lib\tinymce\plugins\advlist\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\anchor\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\autolink\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\autoresize\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\autosave\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\bbcode\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\charmap\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\code\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\directionality\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\emoticons\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\example\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\fullpage\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\hr\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\image\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\importcss\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\layer\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\link\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\lists\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\media\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\noneditable\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\paste\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\preview\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\print\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\save\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\table\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\template\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\textcolor\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\visualchars\plugin.min.js" />
+    <Compile Include="public\js\lib\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="public\js\lib\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\content.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\skin.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\content.css" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\icomoon-small.dev.svg" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\icomoon-small.svg" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\icomoon.dev.svg" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\icomoon.svg" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\wysiwyg.svg" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\fonts\readme.md" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\img\anchor.gif" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\img\loader.gif" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\img\object.gif" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\img\trans.gif" />
+    <Content Include="public\js\lib\tinymce\skins\keystone\img\wline.gif" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\fonts\icomoon-small.svg" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\fonts\icomoon.svg" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\fonts\readme.md" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="public\js\lib\tinymce\skins\lightgray\img\wline.gif" />
+    <Compile Include="public\js\lib\tinymce\themes\modern\theme.min.js" />
+    <Compile Include="routes\api\movies.js" />
+    <Compile Include="routes\views\blog.js" />
+    <Compile Include="routes\views\contact.js" />
+    <Compile Include="routes\views\createGallery.js" />
+    <Compile Include="routes\views\gallery.js" />
+    <Compile Include="routes\views\index.js" />
+    <Compile Include="routes\views\movies.js" />
+    <Compile Include="routes\views\post.js" />
+    <Content Include="templates\emails\enquiry-notification.jade" />
+    <Content Include="templates\layouts\default.jade" />
+    <Content Include="templates\mixins\flash-messages.jade" />
+    <Content Include="templates\views\index.html" />
+    <Content Include="templates\views\blog.jade" />
+    <Content Include="templates\views\contact.jade" />
+    <Content Include="templates\views\createGallery.jade" />
+    <Content Include="templates\views\gallery.jade" />
+    <Content Include="templates\views\movies.jade" />
+    <Content Include="templates\views\post.jade" />
+    <Content Include="templates\views\errors\404.jade" />
+    <Content Include="templates\views\errors\500.jade" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="models" />
+    <Folder Include="public" />
+    <Folder Include="public\css" />
+    <Folder Include="public\fonts" />
+    <Folder Include="public\images" />
+    <Folder Include="public\js" />
+    <Folder Include="public\js\cloudinary" />
+    <Folder Include="public\js\lib" />
+    <Folder Include="public\js\lib\angular" />
+    <Folder Include="public\js\lib\angular-animate" />
+    <Folder Include="public\js\lib\angular-resource" />
+    <Folder Include="public\js\lib\angular-route" />
+    <Folder Include="public\js\lib\blueimp-canvas-to-blob" />
+    <Folder Include="public\js\lib\blueimp-canvas-to-blob\js" />
+    <Folder Include="public\js\lib\blueimp-file-upload" />
+    <Folder Include="public\js\lib\blueimp-file-upload\css" />
+    <Folder Include="public\js\lib\blueimp-file-upload\img" />
+    <Folder Include="public\js\lib\blueimp-file-upload\js" />
+    <Folder Include="public\js\lib\blueimp-file-upload\js\cors" />
+    <Folder Include="public\js\lib\blueimp-file-upload\js\vendor" />
+    <Folder Include="public\js\lib\blueimp-load-image" />
+    <Folder Include="public\js\lib\blueimp-load-image\js" />
+    <Folder Include="public\js\lib\blueimp-tmpl" />
+    <Folder Include="public\js\lib\blueimp-tmpl\js" />
+    <Folder Include="public\js\lib\bootstrap" />
+    <Folder Include="public\js\lib\cloudinary_js" />
+    <Folder Include="public\js\lib\cloudinary_js\html" />
+    <Folder Include="public\js\lib\cloudinary_js\js" />
+    <Folder Include="public\js\lib\cloudinary_js\samples" />
+    <Folder Include="public\js\lib\cloudinary_ng" />
+    <Folder Include="public\js\lib\cloudinary_ng\js" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples\photo_album" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples\photo_album\app" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples\photo_album\app\css" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples\photo_album\app\js" />
+    <Folder Include="public\js\lib\cloudinary_ng\samples\photo_album\app\partials" />
+    <Folder Include="public\js\lib\jquery" />
+    <Folder Include="public\js\lib\jquery\dist" />
+    <Folder Include="public\js\lib\jquery\src" />
+    <Folder Include="public\js\lib\jquery\src\ajax" />
+    <Folder Include="public\js\lib\jquery\src\ajax\var" />
+    <Folder Include="public\js\lib\jquery\src\attributes" />
+    <Folder Include="public\js\lib\jquery\src\core" />
+    <Folder Include="public\js\lib\jquery\src\core\var" />
+    <Folder Include="public\js\lib\jquery\src\css" />
+    <Folder Include="public\js\lib\jquery\src\css\var" />
+    <Folder Include="public\js\lib\jquery\src\data" />
+    <Folder Include="public\js\lib\jquery\src\data\var" />
+    <Folder Include="public\js\lib\jquery\src\effects" />
+    <Folder Include="public\js\lib\jquery\src\event" />
+    <Folder Include="public\js\lib\jquery\src\exports" />
+    <Folder Include="public\js\lib\jquery\src\manipulation" />
+    <Folder Include="public\js\lib\jquery\src\manipulation\var" />
+    <Folder Include="public\js\lib\jquery\src\queue" />
+    <Folder Include="public\js\lib\jquery\src\sizzle" />
+    <Folder Include="public\js\lib\jquery\src\sizzle\dist" />
+    <Folder Include="public\js\lib\jquery\src\traversing" />
+    <Folder Include="public\js\lib\jquery\src\traversing\var" />
+    <Folder Include="public\js\lib\jquery\src\var" />
+    <Folder Include="public\js\lib\ng-file-upload" />
+    <Folder Include="public\js\lib\ng-file-upload-shim" />
+    <Folder Include="public\js\lib\tinymce" />
+    <Folder Include="public\js\lib\tinymce\langs" />
+    <Folder Include="public\js\lib\tinymce\plugins" />
+    <Folder Include="public\js\lib\tinymce\plugins\advlist" />
+    <Folder Include="public\js\lib\tinymce\plugins\anchor" />
+    <Folder Include="public\js\lib\tinymce\plugins\autolink" />
+    <Folder Include="public\js\lib\tinymce\plugins\autoresize" />
+    <Folder Include="public\js\lib\tinymce\plugins\autosave" />
+    <Folder Include="public\js\lib\tinymce\plugins\bbcode" />
+    <Folder Include="public\js\lib\tinymce\plugins\charmap" />
+    <Folder Include="public\js\lib\tinymce\plugins\code" />
+    <Folder Include="public\js\lib\tinymce\plugins\contextmenu" />
+    <Folder Include="public\js\lib\tinymce\plugins\directionality" />
+    <Folder Include="public\js\lib\tinymce\plugins\emoticons" />
+    <Folder Include="public\js\lib\tinymce\plugins\emoticons\img" />
+    <Folder Include="public\js\lib\tinymce\plugins\example" />
+    <Folder Include="public\js\lib\tinymce\plugins\example_dependency" />
+    <Folder Include="public\js\lib\tinymce\plugins\fullpage" />
+    <Folder Include="public\js\lib\tinymce\plugins\fullscreen" />
+    <Folder Include="public\js\lib\tinymce\plugins\hr" />
+    <Folder Include="public\js\lib\tinymce\plugins\image" />
+    <Folder Include="public\js\lib\tinymce\plugins\importcss" />
+    <Folder Include="public\js\lib\tinymce\plugins\insertdatetime" />
+    <Folder Include="public\js\lib\tinymce\plugins\layer" />
+    <Folder Include="public\js\lib\tinymce\plugins\legacyoutput" />
+    <Folder Include="public\js\lib\tinymce\plugins\link" />
+    <Folder Include="public\js\lib\tinymce\plugins\lists" />
+    <Folder Include="public\js\lib\tinymce\plugins\media" />
+    <Folder Include="public\js\lib\tinymce\plugins\nonbreaking" />
+    <Folder Include="public\js\lib\tinymce\plugins\noneditable" />
+    <Folder Include="public\js\lib\tinymce\plugins\pagebreak" />
+    <Folder Include="public\js\lib\tinymce\plugins\paste" />
+    <Folder Include="public\js\lib\tinymce\plugins\preview" />
+    <Folder Include="public\js\lib\tinymce\plugins\print" />
+    <Folder Include="public\js\lib\tinymce\plugins\save" />
+    <Folder Include="public\js\lib\tinymce\plugins\searchreplace" />
+    <Folder Include="public\js\lib\tinymce\plugins\spellchecker" />
+    <Folder Include="public\js\lib\tinymce\plugins\tabfocus" />
+    <Folder Include="public\js\lib\tinymce\plugins\table" />
+    <Folder Include="public\js\lib\tinymce\plugins\template" />
+    <Folder Include="public\js\lib\tinymce\plugins\textcolor" />
+    <Folder Include="public\js\lib\tinymce\plugins\visualblocks" />
+    <Folder Include="public\js\lib\tinymce\plugins\visualblocks\css" />
+    <Folder Include="public\js\lib\tinymce\plugins\visualchars" />
+    <Folder Include="public\js\lib\tinymce\plugins\wordcount" />
+    <Folder Include="public\js\lib\tinymce\skins" />
+    <Folder Include="public\js\lib\tinymce\skins\keystone" />
+    <Folder Include="public\js\lib\tinymce\skins\keystone\fonts" />
+    <Folder Include="public\js\lib\tinymce\skins\keystone\img" />
+    <Folder Include="public\js\lib\tinymce\skins\keystone\less" />
+    <Folder Include="public\js\lib\tinymce\skins\lightgray" />
+    <Folder Include="public\js\lib\tinymce\skins\lightgray\fonts" />
+    <Folder Include="public\js\lib\tinymce\skins\lightgray\img" />
+    <Folder Include="public\js\lib\tinymce\themes" />
+    <Folder Include="public\js\lib\tinymce\themes\modern" />
+    <Folder Include="public\js\movies" />
+    <Folder Include="public\partials" />
+    <Folder Include="public\styles" />
+    <Folder Include="public\styles\bootstrap" />
+    <Folder Include="public\styles\bootstrap\mixins" />
+    <Folder Include="public\styles\site" />
+    <Folder Include="public\stylesheets" />
+    <Folder Include="routes" />
+    <Folder Include="routes\api" />
+    <Folder Include="routes\views" />
+    <Folder Include="templates" />
+    <Folder Include="templates\emails" />
+    <Folder Include="templates\layouts" />
+    <Folder Include="templates\mixins" />
+    <Folder Include="templates\views" />
+    <Folder Include="templates\views\errors" />
+    <Folder Include="updates" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Import Project="$(VSToolsPath)\Node.js Tools\Microsoft.NodejsTools.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:48022/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost:1337</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

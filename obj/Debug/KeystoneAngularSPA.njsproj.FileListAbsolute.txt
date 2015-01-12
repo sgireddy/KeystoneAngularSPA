@@ -1,0 +1,2 @@
+D:\code\KeystoneAngularSPA\obj\Debug\KeystoneAngularSPA.njsprojResolveAssemblyReference.cache
+D:\code\KeystoneAngularSPA\bin\Microsoft.NodejsTools.WebRole.dll
