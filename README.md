@@ -2,6 +2,7 @@
 Keystone-Angular-Cloudinary
 
 This is a sample SPA example integrating Keystone.js, Angular.js and cloudinary-angular.
+
 Do not forget to update .env with your cloudinary cofnig
 CLOUDINARY_URL=<<<Add Yours>>>
 MANDRILL_API_KEY=<<<Add Yours>>>
