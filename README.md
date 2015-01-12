@@ -1,6 +1,8 @@
 # KeystoneAngularSPA
 Keystone-Angular-Cloudinary
 
+License: MIT
+
 This is a sample SPA example integrating Keystone.js, Angular.js and cloudinary-angular.
 
 Do not forget to update .env with your cloudinary cofnig
