@@ -21,6 +21,7 @@ angular.module('movieApp.controllers',[]).controller('MovieListController',funct
 
     $scope.movie = new Movie();
     $scope.movie.images = [];
+    //$scope.movie["images_upload"] = "";
 
     $scope.addMovie = function (){
         $scope.movie.$save(function(){

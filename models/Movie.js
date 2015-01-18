@@ -17,7 +17,8 @@ Movie.add({
     releaseYear: { type: Types.Number },
     genre: { type: String },
     //heroImage: { type: Types.CloudinaryImage },
-    images: { type: Types.CloudinaryImages }
+    images: { type: Types.CloudinaryImages, folder: 'preset_folder' }
+    
 });
 
 Movie.defaultColumns = 'title, director|20%, releaseYear|10%, genre|20%';

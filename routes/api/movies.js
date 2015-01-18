@@ -1,5 +1,7 @@
 ﻿var async = require('async'),
-	keystone = require('keystone');
+	keystone = require('keystone'),
+	_ = require('underscore'),
+	mongoose = require('mongoose');
 
 var Movie = keystone.list('Movie');
 
@@ -59,17 +61,35 @@ exports.get = function (req, res) {
  * Create a Movie
  */
 
-exports.create = function (req, res) {
-	
+exports.create = function (req, res) {	
+
 	var item = new Movie.model(),
-		data = (req.method == 'POST') ? req.body : req.query;
+		data = (req.method == 'POST') ? req.body : req.query;    
+	var movie = new Movie.model();
 	
-	item.getUpdateHandler(req).process(data, function (err) {
+	movie.title = data.title;
+	movie.director = data.director;
+	movie.releaseYear = data.releaseYear;
+	movie.genre = data.genre;
+	
+	_.each(data.images, function (elm, idx, arr) {
+		var tmp = {};
+		tmp["public_id"] = elm.public_id; 
+		tmp["version"] = elm.version;
+		tmp["signature"] = elm.signature;
+		tmp["width"] = elm.width;
+		tmp["height"] = elm.height;
+		tmp["format"] = elm.format;
+		tmp["resource_type"] = elm.resource_type;
+		tmp["url"] = elm.url;
+		tmp["secure_url"] = elm.secure_url;
+		tmp["_id"] = mongoose.Types.ObjectId();        
+		movie.images.push(tmp);
+	});	
+	
+	movie.save(function (err) {
 		if (err) return res.apiError('error', err);
-		res.apiResponse(item);
-		/*res.apiResponse({
-			movie: item
-		});*/
+		res.apiResponse(movie);		
 	});
 }
 

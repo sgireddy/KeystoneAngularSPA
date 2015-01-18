@@ -67,7 +67,7 @@ photoAlbumControllers.controller('photoUploadCtrlJQuery', ['$scope', '$rootScope
                     file.result = data;
                     var tmp = {};
 
-                    tmp["public_id"] = data.public_id; //.substring(14);
+                    tmp["public_id"] = data.public_id.substring(14);
                     tmp["version"] = data.version;
                     tmp["signature"] = data.signature;
                     tmp["width"] = data.width;
@@ -75,9 +75,13 @@ photoAlbumControllers.controller('photoUploadCtrlJQuery', ['$scope', '$rootScope
                     tmp["format"] = data.format;
                     tmp["resource_type"] = data.resource_type;
                     tmp["url"] = data.url;
-                    tmp["secure_url"] = data.secure_url;               
+                    tmp["secure_url"] = data.secure_url;
+                    //tmp["etag"] = data.etag;
+                                   
 
                     $scope.movie.images.push(JSON.stringify(tmp));
+                    //$scope.movie["images_upload"] = JSON.stringify(tmp);
+
                     $rootScope.photos.push(data);
                     if (!$scope.$$phase) {
                         $scope.$apply();
